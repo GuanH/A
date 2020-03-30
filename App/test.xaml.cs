@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -147,9 +147,11 @@ namespace App
                     wrongl.Text = "Wrong :" + wrong.ToString();
                     if (testcount + 1 == ex.Count) {
                         sum_l.Text += "Score : " + (correct * 100 / (correct + wrong)).ToString() + "\nincorrect:\n";
-                        for (int i = 0; i < mis.Count; i++)
+                        int c = mis.Count;
+                        for (int i = 0; i < c; i++)
                         {
-                            sum_l.Text += (VocTypes.Voc.word[ex[mis.Dequeue()]] + " : " + VocTypes.Voc.word[ex[mis.Dequeue()] + 1]) + '\n';
+                            var tem = mis.Dequeue();
+                            sum_l.Text += (VocTypes.Voc.word[ex[tem]] + " : " + VocTypes.Voc.word[ex[tem] + 1]) + '\n';
                         }; ex.Clear(); for (int i = 0; i < 4; i++) { ans[i].IsVisible = false; };topic.IsVisible = false;correctl.IsVisible = false;wrongl.IsVisible = false;wronglist.IsVisible = false; ml.IsVisible = false; mb.IsVisible = false; okbutton.IsVisible = true;
                     }
                 };
@@ -178,9 +180,11 @@ namespace App
                     if (testcount + 1 == ex.Count)
                     {
                         sum_l.Text += "Score : " + (correct * 100 / (correct + wrong)).ToString() + "\nincorrect:\n";
-                        for (int i = 0; i < mis.Count; i++)
+                        int c = mis.Count;
+                        for (int i = 0; i < c; i++)
                         {
-                            sum_l.Text += (VocTypes.Voc.word[ex[mis.Dequeue()]] + " : " + VocTypes.Voc.word[ex[mis.Dequeue()] + 1]) + '\n';
+                            var tem = mis.Dequeue();
+                            sum_l.Text += (VocTypes.Voc.word[ex[tem]] + " : " + VocTypes.Voc.word[ex[tem] + 1]) + '\n';
                         }; ex.Clear();  for (int i = 0; i < 4; i++) { ans[i].IsVisible = false; }; topic.IsVisible = false; correctl.IsVisible = false; wrongl.IsVisible = false; wronglist.IsVisible = false; ml.IsVisible = false; mb.IsVisible = false;okbutton.IsVisible = true;
                     }
                 };
@@ -207,9 +211,11 @@ namespace App
                     wrongl.Text = "Wrong :" + wrong.ToString();
                     if (testcount + 1 == ex.Count) {
                         sum_l.Text += "Score : " + (correct * 100 / (correct + wrong)).ToString() + "\nincorrect:\n";
-                        for (int i = 0; i < mis.Count; i++)
+                        int c = mis.Count;
+                        for (int i = 0; i < c; i++)
                         {
-                            sum_l.Text += (VocTypes.Voc.word[ex[mis.Dequeue()]] + " : " + VocTypes.Voc.word[ex[mis.Dequeue()] + 1]) + '\n';
+                            var tem = mis.Dequeue();
+                            sum_l.Text += (VocTypes.Voc.word[ex[tem]] + " : " + VocTypes.Voc.word[ex[tem] + 1]) + '\n';
                         }; ex.Clear();  for (int i = 0; i < 4; i++) { ans[i].IsVisible = false; }; topic.IsVisible = false; correctl.IsVisible = false; wrongl.IsVisible = false; wronglist.IsVisible = false; ml.IsVisible = false; mb.IsVisible = false; okbutton.IsVisible = true;
                     }
                 };
@@ -237,25 +243,19 @@ namespace App
                     wrongl.Text = "Wrong :" + wrong.ToString();
                     if (testcount + 1 == ex.Count) {
                         sum_l.Text += "Score : " + (correct*100 / (correct + wrong)).ToString() + "\nincorrect:\n";
-                        for (int i = 0; i < mis.Count; i++)
+                        int c = mis.Count;
+                        for (int i = 0; i < c; i++)
                         {
-                            sum_l.Text += (VocTypes.Voc.word[ex[mis.Dequeue()]] + " : " + VocTypes.Voc.word[ex[mis.Dequeue()] + 1]) + '\n';
+                            var tem = mis.Dequeue();
+                            sum_l.Text += (VocTypes.Voc.word[ex[tem]] + " : " + VocTypes.Voc.word[ex[tem] + 1]) + '\n';
                         }; ex.Clear();  for (int i = 0; i < 4; i++) { ans[i].IsVisible = false; }; topic.IsVisible = false; correctl.IsVisible = false; wrongl.IsVisible = false; wronglist.IsVisible = false; ml.IsVisible = false; mb.IsVisible = false; okbutton.IsVisible = true;
                     }
                 };
-
-
-
-
-
-
 
                 AbsoluteLayout.SetLayoutBounds(topic, new Rectangle(Device.GetNamedSize(NamedSize.Large, typeof(Label)) * 4, Device.GetNamedSize(NamedSize.Large, typeof(Label)) * 3, 300, 300));
                 AbsoluteLayout.SetLayoutBounds(correctl, new Rectangle(0, Device.GetNamedSize(NamedSize.Large, typeof(Label)) * 2, 300, 300));
                 AbsoluteLayout.SetLayoutBounds(wrongl, new Rectangle(0, Device.GetNamedSize(NamedSize.Large, typeof(Label)), 300, 300));
 
-
-               
                 ScrollView sum = new ScrollView
                 {
                     Orientation = ScrollOrientation.Vertical,
