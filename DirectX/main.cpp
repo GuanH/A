@@ -15,7 +15,7 @@ using namespace std;
 #pragma comment(lib,"d3d11.lib")
 #pragma comment(lib,"D3DCompiler.lib")
 #define pi      3.14159265358979323846
-#define pi_on_2 1.57079
+#define pi_over_2 1.57079
 #define twopi   6.28318530717958647692
 #define wnd_width 800u
 #define wnd_width_on_2 400u
@@ -400,8 +400,8 @@ int CALLBACK WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine
 			if (e) { camera.pos.pos.y += camera.speed; };
 			if (camera.yaw > twopi) { camera.yaw -= twopi; };
 			if (camera.yaw < -twopi) { camera.yaw += twopi; };
-			if (camera.pitch > pi_on_2) { camera.pitch = pi_on_2; };
-			if (camera.pitch < -pi_on_2) { camera.pitch = -pi_on_2; };
+			if (camera.pitch > pi_over_2) { camera.pitch = pi_over_2; };
+			if (camera.pitch < -pi_over_2) { camera.pitch = -pi_over_2; };
 
 			//render
 			//clean
