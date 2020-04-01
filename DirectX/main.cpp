@@ -360,7 +360,7 @@ int CALLBACK WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine
 	vector<draw_model*> m; m.resize(tmodel->mNumMeshes);
 	for (int i = 0; i < tmodel->mNumMeshes; i++) 
 	{
-		model model_ = { &vertices[i][0],&indices[i][0],sizeof(Vertex) * vertices[i].size(),sizeof(unsigned short) * indices[0].size() };
+		model model_ = { &vertices[i][0],&indices[i][0],sizeof(Vertex) * vertices[i].size(),sizeof(unsigned short) * indices[i].size() };
 		m[i] = new draw_model(model_);
 	}	
 
